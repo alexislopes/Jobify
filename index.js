@@ -13,6 +13,7 @@ const port = process.env.PORT || 3000
 
 //set a view engine
 app.set('view engine', 'ejs')
+app.set('view', path.join(__dirname, 'views'))
 
 //it will reroute (to folder public) in case the path does not exist.
 app.use(express.static('public'))
