@@ -11,12 +11,21 @@ const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), {Promi
 
 const port = process.env.PORT || 3000
 
+app.use('/admin', (req, res, next) => {
+    if (req.hostname === 'localhost'){
+        next()
+    } else {
+        res.send('Not Allowed')
+    }
+})
+
+app.set('view', path.join(__dirname, 'views'))
 //set a view engine
 app.set('view engine', 'ejs')
-app.set('view', path.join(__dirname, 'views'))
+
 
 //it will reroute (to folder public) in case the path does not exist.
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.urlencoded({extended: true}))
 
 //set a route
