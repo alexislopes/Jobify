@@ -1,26 +1,6 @@
-<html>
-    <head>
-        <title>Jobify</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="../public/", rel="stylesheet">
-    </head>
-    <body>
-        <h1>Olá</h1>
-        <img src="../public/images/logo.png" alt="Logo Jobify">
-        <p>We are Jobify - Join us!</p>
-        <h2>Open roles:</h2>
+        <%- include('header') %>
+        <h2><%- vaga.titulo %></h2>
         <div>
-            <h3>Fullstack Developer (Remoto)</h3>
-            <ul>
-                <li><a href="/"></a></li>
-            </ul>
+            <%- vaga.descricao %>
         </div>
-
-        <div>
-            <h3>Marketing team</h3>
-            <ul>
-                <li>Digital Marketing (San Francisco)</li>
-            </ul>
-        </div>
-    </body>
-</html>
+ <%- include('footer') %>
